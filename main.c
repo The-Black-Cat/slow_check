@@ -41,7 +41,7 @@ int main(int argc, char *argv[])
     }else if(fin == 0)
     {
         printf("[?] Possibly Vulnerable!\n");
-    }else if(fin > 10)
+    }else if(fin > 9)
     {
         printf("[+] Vulnerable!\n");
     }
