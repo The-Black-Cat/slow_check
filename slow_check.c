@@ -44,6 +44,7 @@ void create_rdata(char * host)
         "GET / HTTP/1.1\r\n"
         "Host: %s\r\n"
         "User-Agent: Mozilla/4.0 (compatible; MSIE 7.0; Windows NT 5.1; Trident/4.0; .NET CLR 1.1.4322; .NET CLR 2.0.503l3; .NET CLR 3.0.4506.2152; .NET CLR 3.5.30729; MSOffice 12)\r\n"
+        "Connection: Keep-Alive"
         "Content-Length: 42\r\n",host);
 }
 
