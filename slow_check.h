@@ -10,11 +10,17 @@
 #include <netinet/in.h>
 #include <netdb.h>
 #include <time.h>
+#include <pthread.h>
+
+struct arg_struct {
+	char * 	host;
+	char * 	port;
+	int		mode;
+	int     time_spent;
+};
 
 int n;
 char request[256];
-
-clock_t start,stop,startb,stopb;
 
 struct sockaddr_in serv_addr;
 struct hostent *server;
@@ -25,6 +31,7 @@ void connect_socket(int s,char * port);
 void create_rdata(char * host);
 void send_socket(int s,int mode);
 void wait_socket(int s);
+void * slow_check(void * arguments);
 #endif // SLOW_CHECK_H_INCLUDED
 
 

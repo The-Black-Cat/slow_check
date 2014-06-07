@@ -73,3 +73,21 @@ void wait_socket(int s)
          error("ERROR reading from socket");
     close(s);
 }
+
+void * slow_check(void * arguments)
+{
+	struct arg_struct *args = arguments;
+	int sock;
+	clock_t start,stop;
+	
+	sock =  create_socket(args->host);
+    connect_socket(sock,args->port);
+    create_rdata(args->host);
+    time(&start);
+    send_socket(sock,args->mode);
+    wait_socket(sock);
+    time(&stop);
+    args->time_spent = (int)(stop - start);
+    printf("[!] Server waited for : %d secs\n", args->time_spent);
+    return NULL;
+}
