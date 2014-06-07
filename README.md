@@ -12,7 +12,7 @@ That means the server is vulnerable to slowloris type attacks<br>
 
 <b> To-Do-List </b>
 <ul>
-  <li>Use multithreading</li> 
+  <li>~~Use multithreading~~</li> 
   <li>Allow user to modify headers</li>
   <li>Support POST requests</li>
 </ul>
