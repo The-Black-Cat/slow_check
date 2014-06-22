@@ -77,6 +77,7 @@ void wait_socket(int s)
 
 void * slow_check(void * arguments)
 {
+	pthread_mutex_lock(&lock);
 	struct arg_struct *args = arguments;
 	int sock;
 	clock_t start,stop;
@@ -90,5 +91,6 @@ void * slow_check(void * arguments)
     time(&stop);
     args->time_spent = (int)(stop - start);
     printf("[!] Server waited for : %d secs\n", args->time_spent);
+    pthread_mutex_unlock(&lock);
     return NULL;
 }

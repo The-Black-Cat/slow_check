@@ -21,6 +21,7 @@ struct arg_struct {
 
 int n;
 char request[256];
+pthread_mutex_t lock;
 
 struct sockaddr_in serv_addr;
 struct hostent *server;

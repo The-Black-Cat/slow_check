@@ -48,7 +48,7 @@ int main(int argc, char *argv[])
         	printf("[+] Vulnerable!\n");
 	}
 
+	pthread_mutex_destroy(&lock);
 
-
-    return 0;
+	return 0;
 }
